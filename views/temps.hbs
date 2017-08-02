@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tempratures</title>
+  </head>
+  <body>
+    <h1>Tempratures at [{{lon}}, {{lat}}]</h1>
+    {{#each temps}}
+      <p>{{time}}: {{temp}}</p>
+    {{/each}}
+  </body>
+</html>
