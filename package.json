@@ -1,0 +1,40 @@
+{
+  "name": "weather-test",
+  "version": "1.0.0",
+  "description": "End to end sample to request weather forecast data from smhi",
+  "repository": "https://github.com/GhostRabbit/WeatherTest",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "e2e": "rm -rf node_modules/ &&  samples test build --deploy --timeout 20m --builderProject $GCLOUD_PROJECT",
+    "test": "samples test app",
+    "cover": "nyc --cache npm test; nyc report --reporter=html"
+  },
+  "author": "Mattias Fredsberg",
+  "cloud-repo-tools": {
+    "requiresKeyFile": true,
+    "requiresProjectId": true,
+    "test": {
+      "app": {
+        "args": [
+          "app.js"
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "~4.15.2",
+    "express-handlebars": "^3.0.0",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "ava": "~0.19.1",
+    "@google-cloud/nodejs-repo-tools": "1.4.15",
+    "supertest": "~3.0.0",
+    "tap-dot": "~1.0.5"
+  },
+  "engines": {
+    "node": ">=4.3.2"
+  }
+}
